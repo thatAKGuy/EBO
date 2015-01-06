@@ -51,3 +51,12 @@ And to run it in development mode:
 ```
 gulp serve
 ```
+
+## Testing
+
+Full e2e live automated testing is available through
+
+```
+gulp pro:all
+```
+This will allow BrowserSync to update your test environment and run unit tests & e2e tests when Gulp notices changes in source files.
