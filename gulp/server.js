@@ -25,7 +25,8 @@ function browserSyncInit(baseDir, files, browser) {
       middleware: middleware,
       routes: routes
     },
-    browser: browser
+    browser: browser,
+    port: 32879
   });
 
 }
@@ -52,6 +53,21 @@ gulp.task('serve:dist', ['build'], function () {
 gulp.task('serve:e2e', ['wiredep', 'injector:js', 'injector:css'], function () {
   browserSyncInit(['.tmp', 'src'], null, []);
 });
+gulp.task('serve:pro', ['wiredep', 'injector:js', 'injector:css'], function () {
+  browserSyncInit([
+    '.tmp',
+    'src'
+  ], [
+    '.tmp/{app,components}/**/*.css',
+    'src/{app,components}/**/*.js',
+    'src/assets/images/**/*',
+    '.tmp/*.html',
+    '.tmp/{app,components}/**/*.html',
+    'src/*.html',
+    'src/{app,components}/**/*.html'
+  ]);
+});
+
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit('dist', null, []);

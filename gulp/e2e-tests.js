@@ -22,7 +22,8 @@ function runProtractor (done) {
     }))
     .on('error', function (err) {
       // Make sure failed tests cause gulp to exit non-zero
-      throw err;
+      this.emit('end');
+      //throw err;
     })
     .on('end', function () {
       // Close browser sync server
@@ -32,6 +33,28 @@ function runProtractor (done) {
 }
 
 gulp.task('pro', ['pro:src']);
-gulp.task('pro:src', ['serve:e2e', 'webdriver-update'], runProtractor);
+gulp.task('pro:all', ['serve:pro', 'watch:e2e', 'webdriver-update'], function(){
+  var watchFiles = [
+    'e2e/**/*.js',
+    'src/{app,components}/**/*.js',
+    'src/{app,components}/**/*.html'
+  ],
+  testFiles = 'e2e/**/*.js',
+  TEST = function(){
+    gulp.src(testFiles)
+      .pipe($.protractor.protractor({
+        configFile: 'protractor.conf.js',
+      }))
+      .on('error', function (err) {
+        // Make sure failed tests cause gulp to exit non-zero
+        this.emit('end');
+      })
+      .on('end', function () {
+      });
+  };
+  gulp.watch(watchFiles, TEST);
+  TEST();
+});
+gulp.task('pro:src', ['serve:e2e', 'watch', 'webdriver-update'], runProtractor);
 gulp.task('pro:dist', ['serve:e2e-dist', 'webdriver-update'], runProtractor);
 
