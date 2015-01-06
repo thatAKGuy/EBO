@@ -13,9 +13,5 @@ describe('The main view', function () {
     expect(page.h2El.getText()).toContain('Angular');
   });
 
-  it('list more than 5 awesome things', function () {
-    expect(page.thumbnailEls.count()).toBeGreaterThan(5);
-  });
-
 });
 
