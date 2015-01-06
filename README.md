@@ -5,7 +5,7 @@ EBO test front end client for development against.
 
 # Environment setup
 
-To fully utilise some aspects of this project, such as end-to-end testing and auto parsing, a few pieces of third-party software are needed.
+To fully utilise some aspects of this project, such as end-to-end testing and auto parsing, a few pieces of third-party software are needed. The project will run on port `32879` so ensure that this port is available on your system.
 
 ## Node.js
 
