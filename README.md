@@ -1,7 +1,6 @@
-[![Travis build status](https://api.travis-ci.org/thatAKGuy/EBO.svg?branch=master)](https://travis-ci.org/thatAKGuy/EBO)
-
 EBO
 ===
+[![Travis build status](https://api.travis-ci.org/thatAKGuy/EBO.svg?branch=master)](https://travis-ci.org/thatAKGuy/EBO)
 
 EBO test front end client for development against. 
 
