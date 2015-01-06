@@ -18,9 +18,10 @@ The following applications are needed to be installed globally. In Windows this 
 * Gulp
 * Bower
 * Browser-sync
+* Protractor
 
 ```
-npm install -g gulp bower browser-sync
+npm install -g gulp bower browser-sync protractor
 ```
 
 ## Installation
