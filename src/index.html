@@ -25,8 +25,19 @@
     <!-- endbuild -->
   </head>
   <body>
+    
+    <div class="container">
 
-    <div ui-view></div>
+      <div ng-include="'components/navbar/navbar.html'"></div>
+
+      <div ui-view></div>
+
+      <hr>
+
+      <div ng-include="'components/footer/footer.html'"></div>
+
+    </div>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -46,8 +57,10 @@
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <!-- inject:js -->
     <script src="app/index.js"></script>
-    <script src="app/main/main.controller.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/footer/footer.controller.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/about/about.controller.js"></script>
     <!-- endinject -->
 
     <!-- inject:partials -->
