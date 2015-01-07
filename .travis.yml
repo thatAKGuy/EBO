@@ -4,6 +4,7 @@ node_js:
   - 0.11
 
 before_install:
+  - npm install -g npm@2
   - npm install -g gulp bower
   - npm install
   - bower install
