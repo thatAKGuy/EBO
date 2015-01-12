@@ -17,12 +17,16 @@ function writeScreenShot(data, filename) {
 
 // After each failing test, take a screen shot
 afterEach(function() {
-  var passed = jasmine.getEnv().currentSpec.results().passed(),
-    currentSpec = jasmine.getEnv().currentSpec.description.split(' ').join('-');
+  var 
+    currentSpec = jasmine.getEnv().currentSpec,
+    passed = currentSpec.results().passed(),
+    suiteName = currentSpec.suite.description.split(' ').join('-');
+    description = currentSpec.description.split(' ').join('-'),
+    now = new Date().toISOString().replace(/T/, '_').replace(/\:(.+)/, '');
 
-    if(!passed) {
+    if(!passed) { 
       browser.takeScreenshot().then(function (png) {
-        writeScreenShot(png, 'e2e-fail_' + currentSpec + '.png');
+        writeScreenShot(png, 'e2e-fail_-_' + suiteName + '_-_' + description + '_-_'+ now +'.png');
       });
     }
   });
