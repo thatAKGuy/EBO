@@ -1,19 +1,20 @@
 <!doctype html>
 <html class="no-js" data-ng-app="ebo">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>ebo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    
+
     <!-- build:css({.tmp,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="//cdn.optimizely.com/js/2337521942.js"></script>
     
-
     <!-- build:css({.tmp,src}) styles/app.css -->
     <!-- inject:css -->
     <link rel="stylesheet" href="app/index.css">
@@ -23,10 +24,25 @@
     <!-- build:js scripts/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
 
-    <div data-ui-view></div>
+<body>
+
+    <div class="container">
+        
+        <div data-ng-include="'components/navbar/navbar.html'"></div>
+        
+        <div data-ui-view></div>
+
+        <hr>
+        
+        <div class="footer">
+            <p>Some footer message</p>
+        </div>
+
+    </div>
+
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -40,6 +56,10 @@
     <script src="../bower_components/restangular/dist/restangular.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="../bower_components/angular-translate/angular-translate.js"></script>
+    <script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -47,7 +67,11 @@
     <!-- inject:js -->
     <script src="app/index.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/firebase/firebase.service.js"></script>
+    <script src="app/translator/translator.controller.js"></script>
     <script src="app/main/main.controller.js"></script>
+    <script src="app/form_trade_finance/form_trade_finance.controller.js"></script>
+    <script src="app/approval/approval.controller.js"></script>
     <!-- endinject -->
 
     <!-- inject:partials -->
@@ -55,5 +79,6 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-  </body>
+</body>
+
 </html>

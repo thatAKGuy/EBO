@@ -1,0 +1,545 @@
+<div class="row">
+    <div class="col-md-3">
+        <select class="form-control" ng-model="$root.currentLanguage">       
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+        </select>
+    </div>
+
+    <div class="col-md-9">
+            <button ng-show="editingMode == false" type="button" ng-click="editingMode = true;" class="btn btn-default pull-right">Turn on Editing Mode</button>
+            <button ng-show="editingMode == true" type="button"  ng-click="editingMode = false;" class="btn btn-success btn-editing pull-right">Turn Off Editing</button>
+    </div>
+
+</div>
+
+<hr>
+
+<fieldset class="box">
+    <div class="box-header">
+        <div class="row">
+            <div class="col-lg-9 col-md-8">
+                <h3> 1. <span translate>form_contact_title</span></h3>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="box-status" data-toggle="fieldset-status">
+                    <div class="box-status-errors">
+                        Fields with errors: <strong id="box-status-errors-num" data-toggle="fieldset-status-errors"></strong>
+                    </div>
+                    <div class="box-status-icon">
+                        <i class="box-status-icon-success fa fa-check-circle"></i>
+                        <i class="box-status-icon-error fa fa-times-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-columns">
+        <div class="box-column-2">
+            <div class="form-group" data-validation="required">
+                <label for="id_name"> <span translate>form_contact_personName</span>:</label>
+                <input class="form-control" id="id_name" name="name" type="text" value="test">
+            </div>
+            <div class="form-group" data-validation="required">
+                <label for="id_position"><span translate>form_contact_position</span>:</label>
+                <input class="form-control" id="id_position" maxlength="255" name="position" type="text">
+            </div>
+            <div class="form-group" data-validation="date">
+                <label for="id_date_birth_day"><span translate>form_contact_dob</span>:</label>
+                <div class="date">
+                    <div class="select2-container form-control select2" id="s2id_id_date_birth_day">
+                        <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" id="select2-chosen-1">---</span>
+                            <abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span>
+                        </a>
+                        <label for="s2id_autogen1" class="select2-offscreen"><span translate>form_contact_dob</span>:</label>
+                        <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1">
+                        <div class="select2-drop select2-display-none">
+                            <div class="select2-search select2-search-hidden select2-offscreen">
+                                <label for="s2id_autogen1_search" class="select2-offscreen"><span translate>form_contact_dob</span>:</label>
+                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder=""> </div>
+                            <ul class="select2-results" role="listbox" id="select2-results-1"> </ul>
+                        </div>
+                    </div>
+                    <select class="form-control select2 select2-offscreen" data-search="false" id="id_date_birth_day" name="date_birth_day" tabindex="-1" title="Date of birth:">
+                        <option value="0">---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <div class="select2-container form-control select2" id="s2id_id_date_birth_month">
+                        <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" id="select2-chosen-2">---</span>
+                            <abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span>
+                        </a>
+                        <label for="s2id_autogen2" class="select2-offscreen"></label>
+                        <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2">
+                        <div class="select2-drop select2-display-none">
+                            <div class="select2-search select2-search-hidden select2-offscreen">
+                                <label for="s2id_autogen2_search" class="select2-offscreen"></label>
+                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder=""> </div>
+                            <ul class="select2-results" role="listbox" id="select2-results-2"> </ul>
+                        </div>
+                    </div>
+                    <select class="form-control select2 select2-offscreen" data-search="false" id="id_date_birth_month" name="date_birth_month" tabindex="-1" title="">
+                        <option value="0">---</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <div class="select2-container form-control select2" id="s2id_id_date_birth_year">
+                        <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" id="select2-chosen-3">---</span>
+                            <abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span>
+                        </a>
+                        <label for="s2id_autogen3" class="select2-offscreen"></label>
+                        <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3">
+                        <div class="select2-drop select2-display-none">
+                            <div class="select2-search select2-search-hidden select2-offscreen">
+                                <label for="s2id_autogen3_search" class="select2-offscreen"></label>
+                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" placeholder=""> </div>
+                            <ul class="select2-results" role="listbox" id="select2-results-3"> </ul>
+                        </div>
+                    </div>
+                    <select class="form-control select2 select2-offscreen" data-search="false" id="id_date_birth_year" name="date_birth_year" tabindex="-1" title="">
+                        <option value="0">---</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <option value="1989">1989</option>
+                        <option value="1988">1988</option>
+                        <option value="1987">1987</option>
+                        <option value="1986">1986</option>
+                        <option value="1985">1985</option>
+                        <option value="1984">1984</option>
+                        <option value="1983">1983</option>
+                        <option value="1982">1982</option>
+                        <option value="1981">1981</option>
+                        <option value="1980">1980</option>
+                        <option value="1979">1979</option>
+                        <option value="1978">1978</option>
+                        <option value="1977">1977</option>
+                        <option value="1976">1976</option>
+                        <option value="1975">1975</option>
+                        <option value="1974">1974</option>
+                        <option value="1973">1973</option>
+                        <option value="1972">1972</option>
+                        <option value="1971">1971</option>
+                        <option value="1970">1970</option>
+                        <option value="1969">1969</option>
+                        <option value="1968">1968</option>
+                        <option value="1967">1967</option>
+                        <option value="1966">1966</option>
+                        <option value="1965">1965</option>
+                        <option value="1964">1964</option>
+                        <option value="1963">1963</option>
+                        <option value="1962">1962</option>
+                        <option value="1961">1961</option>
+                        <option value="1960">1960</option>
+                        <option value="1959">1959</option>
+                        <option value="1958">1958</option>
+                        <option value="1957">1957</option>
+                        <option value="1956">1956</option>
+                        <option value="1955">1955</option>
+                        <option value="1954">1954</option>
+                        <option value="1953">1953</option>
+                        <option value="1952">1952</option>
+                        <option value="1951">1951</option>
+                        <option value="1950">1950</option>
+                        <option value="1949">1949</option>
+                        <option value="1948">1948</option>
+                        <option value="1947">1947</option>
+                        <option value="1946">1946</option>
+                        <option value="1945">1945</option>
+                        <option value="1944">1944</option>
+                        <option value="1943">1943</option>
+                        <option value="1942">1942</option>
+                        <option value="1941">1941</option>
+                        <option value="1940">1940</option>
+                        <option value="1939">1939</option>
+                        <option value="1938">1938</option>
+                        <option value="1937">1937</option>
+                        <option value="1936">1936</option>
+                        <option value="1935">1935</option>
+                        <option value="1934">1934</option>
+                        <option value="1933">1933</option>
+                        <option value="1932">1932</option>
+                        <option value="1931">1931</option>
+                        <option value="1930">1930</option>
+                        <option value="1929">1929</option>
+                        <option value="1928">1928</option>
+                        <option value="1927">1927</option>
+                        <option value="1926">1926</option>
+                        <option value="1925">1925</option>
+                        <option value="1924">1924</option>
+                        <option value="1923">1923</option>
+                        <option value="1922">1922</option>
+                        <option value="1921">1921</option>
+                        <option value="1920">1920</option>
+                        <option value="1919">1919</option>
+                        <option value="1918">1918</option>
+                        <option value="1917">1917</option>
+                        <option value="1916">1916</option>
+                        <option value="1915">1915</option>
+                        <option value="1914">1914</option>
+                        <option value="1913">1913</option>
+                        <option value="1912">1912</option>
+                        <option value="1911">1911</option>
+                        <option value="1910">1910</option>
+                        <option value="1909">1909</option>
+                        <option value="1908">1908</option>
+                        <option value="1907">1907</option>
+                        <option value="1906">1906</option>
+                        <option value="1905">1905</option>
+                        <option value="1904">1904</option>
+                        <option value="1903">1903</option>
+                        <option value="1902">1902</option>
+                        <option value="1901">1901</option>
+                        <option value="1900">1900</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" data-validation="email">
+                <label for="id_email"><span translate>form_contact_email</span>:</label>
+                <input class="form-control" id="id_email" name="email" type="email" value="test@test.com">
+            </div>
+            <div class="form-group" data-validation="required">
+                <label for="id_telephone"><span translate>form_contact_tel</span>:</label>
+                <input class="form-control" id="id_telephone" maxlength="64" name="telephone" type="text" value="049543954395">
+            </div>
+        </div>
+        <div class="box-column-2">
+            <div class="form-group" data-validation="required">
+                <label for="id_business_name"><span translate>form_contact_businessName</span>:</label>
+                <input class="form-control" id="id_business_name" maxlength="255" name="business_name" type="text" value="test">
+            </div>
+            <div class="form-group" data-validation="required">
+                <label for="id_trading_name"><span translate>form_contact_tradingName</span>:</label>
+                <input class="form-control" id="id_trading_name" maxlength="255" name="trading_name" type="text">
+            </div>
+            <div class="form-group" data-validation="required">
+                <label for="id_registered_number"><span translate>form_contact_companyReg</span>:</label>
+                <input class="form-control" id="id_registered_number" maxlength="255" name="registered_number" type="text">
+            </div>
+            <div class="form-group" data-validation="required">
+                <label for="id_business_address"><span translate>form_contact_businessAddress</span>:</label>
+                <input class="form-control" id="id_business_address" maxlength="255" name="business_address" type="text">
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group" data-validation="required">
+                        <label for="id_postcode"><span translate>form_contact_postcode</span>:</label>
+                        <input class="form-control" id="id_postcode" maxlength="10" name="postcode" type="text">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group" data-validation="required">
+                        <label for="id_country"><span translate>form_contact_country</span>:</label>
+                        <div class="select2-container form-control select2" id="s2id_id_country">
+                            <a href="javascript:void(0)" class="select2-choice" tabindex="-1"> <span class="select2-chosen" id="select2-chosen-4">---------</span>
+                                <abbr class="select2-search-choice-close"></abbr> <span class="select2-arrow" role="presentation"><b role="presentation"></b></span>
+                            </a>
+                            <label for="s2id_autogen4" class="select2-offscreen"><span translate>form_contact_country</span>:</label>
+                            <input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-4" id="s2id_autogen4">
+                            <div class="select2-drop select2-display-none select2-with-searchbox">
+                                <div class="select2-search">
+                                    <label for="s2id_autogen4_search" class="select2-offscreen"><span translate>form_contact_country</span>:</label>
+                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-4" id="s2id_autogen4_search" placeholder=""> </div>
+                                <ul class="select2-results" role="listbox" id="select2-results-4"> </ul>
+                            </div>
+                        </div>
+                        <select class="form-control select2 select2-offscreen" id="id_country" name="country" tabindex="-1" title="Country:">
+                            <option value="" selected="selected">---------</option>
+                            <option value="GBR">United Kingdom GBR</option>
+                            <option value="NLD">Netherlands NLD</option>
+                            <option value="AFG">Afghanistan AFG</option>
+                            <option value="ALA">Aland Islands ALA</option>
+                            <option value="ALB">Albania ALB</option>
+                            <option value="DZA">Algeria DZA</option>
+                            <option value="ASM">American Samoa ASM</option>
+                            <option value="AND">Andorra AND</option>
+                            <option value="AGO">Angola AGO</option>
+                            <option value="AIA">Anguilla AIA</option>
+                            <option value="ATA">Antarctica ATA</option>
+                            <option value="ATG">Antigua and Barbuda ATG</option>
+                            <option value="ARG">Argentina ARG</option>
+                            <option value="ARM">Armenia ARM</option>
+                            <option value="ABW">Aruba ABW</option>
+                            <option value="AUS">Australia AUS</option>
+                            <option value="AUT">Austria AUT</option>
+                            <option value="AZE">Azerbaijan AZE</option>
+                            <option value="BHS">Bahamas BHS</option>
+                            <option value="BHR">Bahrain BHR</option>
+                            <option value="BGD">Bangladesh BGD</option>
+                            <option value="BRB">Barbados BRB</option>
+                            <option value="BLR">Belarus BLR</option>
+                            <option value="BEL">Belgium BEL</option>
+                            <option value="BLZ">Belize BLZ</option>
+                            <option value="BEN">Benin BEN</option>
+                            <option value="BMU">Bermuda BMU</option>
+                            <option value="BTN">Bhutan BTN</option>
+                            <option value="BOL">Bolivia BOL</option>
+                            <option value="BIH">Bosnia and Herzegovina BIH</option>
+                            <option value="BWA">Botswana BWA</option>
+                            <option value="BVT">Bouvet Island BVT</option>
+                            <option value="BRA">Brazil BRA</option>
+                            <option value="IOT">British Indian Ocean Territory IOT</option>
+                            <option value="VGB">British Virgin Islands VGB</option>
+                            <option value="BRN">Brunei BRN</option>
+                            <option value="BGR">Bulgaria BGR</option>
+                            <option value="BFA">Burkina Faso BFA</option>
+                            <option value="BDI">Burundi BDI</option>
+                            <option value="KHM">Cambodia KHM</option>
+                            <option value="CMR">Cameroon CMR</option>
+                            <option value="CAN">Canada CAN</option>
+                            <option value="CPV">Cape Verde CPV</option>
+                            <option value="CYM">Cayman Islands CYM</option>
+                            <option value="CAF">Central African Republic CAF</option>
+                            <option value="TCD">Chad TCD</option>
+                            <option value="CHL">Chile CHL</option>
+                            <option value="CHN">China CHN</option>
+                            <option value="CXR">Christmas Island CXR</option>
+                            <option value="CCK">Cocos Islands CCK</option>
+                            <option value="COL">Colombia COL</option>
+                            <option value="COM">Comoros COM</option>
+                            <option value="COK">Cook Islands COK</option>
+                            <option value="CRI">Costa Rica CRI</option>
+                            <option value="HRV">Croatia HRV</option>
+                            <option value="CUB">Cuba CUB</option>
+                            <option value="CYP">Cyprus CYP</option>
+                            <option value="CZE">Czech Republic CZE</option>
+                            <option value="COD">Democratic Republic of the Congo COD</option>
+                            <option value="DNK">Denmark DNK</option>
+                            <option value="DJI">Djibouti DJI</option>
+                            <option value="DMA">Dominica DMA</option>
+                            <option value="DOM">Dominican Republic DOM</option>
+                            <option value="TLS">East Timor TLS</option>
+                            <option value="ECU">Ecuador ECU</option>
+                            <option value="EGY">Egypt EGY</option>
+                            <option value="SLV">El Salvador SLV</option>
+                            <option value="GNQ">Equatorial Guinea GNQ</option>
+                            <option value="ERI">Eritrea ERI</option>
+                            <option value="EST">Estonia EST</option>
+                            <option value="ETH">Ethiopia ETH</option>
+                            <option value="FLK">Falkland Islands FLK</option>
+                            <option value="FRO">Faroe Islands FRO</option>
+                            <option value="FJI">Fiji FJI</option>
+                            <option value="FIN">Finland FIN</option>
+                            <option value="FRA">France FRA</option>
+                            <option value="GUF">French Guiana GUF</option>
+                            <option value="PYF">French Polynesia PYF</option>
+                            <option value="ATF">French Southern Territories ATF</option>
+                            <option value="GAB">Gabon GAB</option>
+                            <option value="GMB">Gambia GMB</option>
+                            <option value="GEO">Georgia GEO</option>
+                            <option value="DEU">Germany DEU</option>
+                            <option value="GHA">Ghana GHA</option>
+                            <option value="GIB">Gibraltar GIB</option>
+                            <option value="GRC">Greece GRC</option>
+                            <option value="GRL">Greenland GRL</option>
+                            <option value="GRD">Grenada GRD</option>
+                            <option value="GLP">Guadeloupe GLP</option>
+                            <option value="GUM">Guam GUM</option>
+                            <option value="GTM">Guatemala GTM</option>
+                            <option value="GGY">Guernsey GGY</option>
+                            <option value="GIN">Guinea GIN</option>
+                            <option value="GNB">Guinea-Bissau GNB</option>
+                            <option value="GUY">Guyana GUY</option>
+                            <option value="HTI">Haiti HTI</option>
+                            <option value="HMD">Heard Island and McDonald Islands HMD</option>
+                            <option value="HND">Honduras HND</option>
+                            <option value="HKG">Hong Kong HKG</option>
+                            <option value="HUN">Hungary HUN</option>
+                            <option value="ISL">Iceland ISL</option>
+                            <option value="IND">India IND</option>
+                            <option value="IDN">Indonesia IDN</option>
+                            <option value="IRN">Iran IRN</option>
+                            <option value="IRQ">Iraq IRQ</option>
+                            <option value="IRL">Ireland IRL</option>
+                            <option value="IMN">Isle of Man IMN</option>
+                            <option value="ISR">Israel ISR</option>
+                            <option value="ITA">Italy ITA</option>
+                            <option value="CIV">Ivory Coast CIV</option>
+                            <option value="JAM">Jamaica JAM</option>
+                            <option value="JPN">Japan JPN</option>
+                            <option value="JEY">Jersey JEY</option>
+                            <option value="JOR">Jordan JOR</option>
+                            <option value="KAZ">Kazakhstan KAZ</option>
+                            <option value="KEN">Kenya KEN</option>
+                            <option value="KIR">Kiribati KIR</option>
+                            <option value="XKX">Kosovo XKX</option>
+                            <option value="KWT">Kuwait KWT</option>
+                            <option value="KGZ">Kyrgyzstan KGZ</option>
+                            <option value="LAO">Laos LAO</option>
+                            <option value="LVA">Latvia LVA</option>
+                            <option value="LBN">Lebanon LBN</option>
+                            <option value="LSO">Lesotho LSO</option>
+                            <option value="LBR">Liberia LBR</option>
+                            <option value="LBY">Libya LBY</option>
+                            <option value="LIE">Liechtenstein LIE</option>
+                            <option value="LTU">Lithuania LTU</option>
+                            <option value="LUX">Luxembourg LUX</option>
+                            <option value="MAC">Macao MAC</option>
+                            <option value="MKD">Macedonia MKD</option>
+                            <option value="MDG">Madagascar MDG</option>
+                            <option value="MWI">Malawi MWI</option>
+                            <option value="MYS">Malaysia MYS</option>
+                            <option value="MDV">Maldives MDV</option>
+                            <option value="MLI">Mali MLI</option>
+                            <option value="MLT">Malta MLT</option>
+                            <option value="MHL">Marshall Islands MHL</option>
+                            <option value="MTQ">Martinique MTQ</option>
+                            <option value="MRT">Mauritania MRT</option>
+                            <option value="MUS">Mauritius MUS</option>
+                            <option value="MYT">Mayotte MYT</option>
+                            <option value="MEX">Mexico MEX</option>
+                            <option value="FSM">Micronesia FSM</option>
+                            <option value="MDA">Moldova MDA</option>
+                            <option value="MCO">Monaco MCO</option>
+                            <option value="MNG">Mongolia MNG</option>
+                            <option value="MNE">Montenegro MNE</option>
+                            <option value="MSR">Montserrat MSR</option>
+                            <option value="MAR">Morocco MAR</option>
+                            <option value="MOZ">Mozambique MOZ</option>
+                            <option value="MMR">Myanmar MMR</option>
+                            <option value="NAM">Namibia NAM</option>
+                            <option value="NRU">Nauru NRU</option>
+                            <option value="NPL">Nepal NPL</option>
+                            <option value="ANT">Netherlands Antilles ANT</option>
+                            <option value="NCL">New Caledonia NCL</option>
+                            <option value="NZL">New Zealand NZL</option>
+                            <option value="NIC">Nicaragua NIC</option>
+                            <option value="NER">Niger NER</option>
+                            <option value="NGA">Nigeria NGA</option>
+                            <option value="NIU">Niue NIU</option>
+                            <option value="NFK">Norfolk Island NFK</option>
+                            <option value="MNP">Northern Mariana Islands MNP</option>
+                            <option value="PRK">North Korea PRK</option>
+                            <option value="NOR">Norway NOR</option>
+                            <option value="OMN">Oman OMN</option>
+                            <option value="PAK">Pakistan PAK</option>
+                            <option value="PLW">Palau PLW</option>
+                            <option value="PSE">Palestinian Territory PSE</option>
+                            <option value="PAN">Panama PAN</option>
+                            <option value="PNG">Papua New Guinea PNG</option>
+                            <option value="PRY">Paraguay PRY</option>
+                            <option value="PER">Peru PER</option>
+                            <option value="PHL">Philippines PHL</option>
+                            <option value="PCN">Pitcairn PCN</option>
+                            <option value="POL">Poland POL</option>
+                            <option value="PRT">Portugal PRT</option>
+                            <option value="PRI">Puerto Rico PRI</option>
+                            <option value="QAT">Qatar QAT</option>
+                            <option value="COG">Republic of the Congo COG</option>
+                            <option value="REU">Reunion REU</option>
+                            <option value="ROU">Romania ROU</option>
+                            <option value="RUS">Russia RUS</option>
+                            <option value="RWA">Rwanda RWA</option>
+                            <option value="BLM">Saint Barthélemy BLM</option>
+                            <option value="SHN">Saint Helena SHN</option>
+                            <option value="KNA">Saint Kitts and Nevis KNA</option>
+                            <option value="LCA">Saint Lucia LCA</option>
+                            <option value="MAF">Saint Martin MAF</option>
+                            <option value="SPM">Saint Pierre and Miquelon SPM</option>
+                            <option value="VCT">Saint Vincent and the Grenadines VCT</option>
+                            <option value="WSM">Samoa WSM</option>
+                            <option value="SMR">San Marino SMR</option>
+                            <option value="STP">Sao Tome and Principe STP</option>
+                            <option value="SAU">Saudi Arabia SAU</option>
+                            <option value="SEN">Senegal SEN</option>
+                            <option value="SRB">Serbia SRB</option>
+                            <option value="SCG">Serbia and Montenegro SCG</option>
+                            <option value="SYC">Seychelles SYC</option>
+                            <option value="SLE">Sierra Leone SLE</option>
+                            <option value="SGP">Singapore SGP</option>
+                            <option value="SVK">Slovakia SVK</option>
+                            <option value="SVN">Slovenia SVN</option>
+                            <option value="SLB">Solomon Islands SLB</option>
+                            <option value="SOM">Somalia SOM</option>
+                            <option value="ZAF">South Africa ZAF</option>
+                            <option value="SGS">South Georgia and the South Sandwich Islands SGS</option>
+                            <option value="KOR">South Korea KOR</option>
+                            <option value="ESP">Spain ESP</option>
+                            <option value="LKA">Sri Lanka LKA</option>
+                            <option value="SDN">Sudan SDN</option>
+                            <option value="SUR">Suriname SUR</option>
+                            <option value="SJM">Svalbard and Jan Mayen SJM</option>
+                            <option value="SWZ">Swaziland SWZ</option>
+                            <option value="SWE">Sweden SWE</option>
+                            <option value="CHE">Switzerland CHE</option>
+                            <option value="SYR">Syria SYR</option>
+                            <option value="TWN">Taiwan TWN</option>
+                            <option value="TJK">Tajikistan TJK</option>
+                            <option value="TZA">Tanzania TZA</option>
+                            <option value="THA">Thailand THA</option>
+                            <option value="TGO">Togo TGO</option>
+                            <option value="TKL">Tokelau TKL</option>
+                            <option value="TON">Tonga TON</option>
+                            <option value="TTO">Trinidad and Tobago TTO</option>
+                            <option value="TUN">Tunisia TUN</option>
+                            <option value="TUR">Turkey TUR</option>
+                            <option value="TKM">Turkmenistan TKM</option>
+                            <option value="TCA">Turks and Caicos Islands TCA</option>
+                            <option value="TUV">Tuvalu TUV</option>
+                            <option value="UGA">Uganda UGA</option>
+                            <option value="UKR">Ukraine UKR</option>
+                            <option value="ARE">United Arab Emirates ARE</option>
+                            <option value="USA">United States USA</option>
+                            <option value="UMI">United States Minor Outlying Islands UMI</option>
+                            <option value="URY">Uruguay URY</option>
+                            <option value="VIR">U.S. Virgin Islands VIR</option>
+                            <option value="UZB">Uzbekistan UZB</option>
+                            <option value="VUT">Vanuatu VUT</option>
+                            <option value="VAT">Vatican VAT</option>
+                            <option value="VEN">Venezuela VEN</option>
+                            <option value="VNM">Vietnam VNM</option>
+                            <option value="WLF">Wallis and Futuna WLF</option>
+                            <option value="ESH">Western Sahara ESH</option>
+                            <option value="YEM">Yemen YEM</option>
+                            <option value="ZMB">Zambia ZMB</option>
+                            <option value="ZWE">Zimbabwe ZWE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

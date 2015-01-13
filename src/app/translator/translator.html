@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Firebase Localisation Test</h1>
+
+        <div class="row">
+            <div class="col-md-3">
+                <select class="form-control" ng-model="$root.currentLanguage">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control">
+                    <option>Trade Finance</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+        
+                    <button ng-show="sentForReview == false" type="button" ng-click="sentForReview = true;" class="btn btn-default pull-right">Send for Review</button>
+                    <button ng-show="sentForReview == true" type="button" class="btn btn-success disabled pull-right">Sent!</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key, value) in languageData track by $index">
+                <td>{{key}}</td>
+                <td>
+                    <input class="form-control" ng-model="languageData[key]" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

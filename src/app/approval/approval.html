@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Firebase Approve Form</h1>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <button ng-show="sentForReview == false" type="button" ng-click="sentForReview = true;" class="btn btn-default pull-right">Authorise</button>
+                <button ng-show="sentForReview == true" type="button" class="btn btn-success disabled pull-right">Authorised!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Current Value</th>
+                <th>New Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="languageCode in currentLanguageData track by $index">
+                <td>{{key}}</td>
+                <td>
+                    <p>
+                        {{currentLanguageData[key]}}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        {{modifiedLanguageData[key]}}
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

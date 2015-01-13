@@ -8,11 +8,11 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a data-ng-href="#">Home</a></li>
-        <li><a data-ng-href="#">About</a></li>
-        <li><a data-ng-href="#">Contact</a></li>
+        <li ng-class="{active:isActive('/')}"><a data-ui-sref="home">Home</a></li>
+        <li ng-class="{active:isActive('/form')}"><a data-ui-sref="form">Form Trade Finance Example</a></li>      
+        <li ng-class="{active:isActive('/translator')}"><a data-ui-sref="translator">Language Editor Example</a></li>      
+        <li ng-class="{active:isActive('/approval')}"><a data-ui-sref="approval">Language Approval Example</a></li>      
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
         <li>Current date: {{ date | date:'yyyy-MM-dd' }}</li>
       </ul>

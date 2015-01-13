@@ -1,0 +1,14 @@
+{
+    "form_contact_title": "Sus detalles de contacto",
+    "form_contact_businessAddress": "dirección comercial",
+    "form_contact_businessName": "nombre del Negocio",
+    "form_contact_companyReg": "Company registration number",
+    "form_contact_country": "país",
+    "form_contact_dob": "Fecha de nacimiento",
+    "form_contact_email": "dirección de correo electrónico",
+    "form_contact_personName": "nombre de contacto",
+    "form_contact_position": "posición",
+    "form_contact_postcode": "código postal",
+    "form_contact_tel": "teléfono",
+    "form_contact_tradingName": "nombre comercial"
+}

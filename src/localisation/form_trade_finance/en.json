@@ -1,0 +1,14 @@
+{
+    "form_contact_title": "Your Contact Details",
+    "form_contact_businessAddress": "Business address",
+    "form_contact_businessName": "Business name",
+    "form_contact_companyReg": "Company registration number",
+    "form_contact_country": "Country",
+    "form_contact_dob": "Date of birth",
+    "form_contact_email": "Email address",
+    "form_contact_personName": "Contact name",
+    "form_contact_position": "Position",
+    "form_contact_postcode": "Postcode",
+    "form_contact_tel": "Telephone",
+    "form_contact_tradingName": "Trading name"
+}

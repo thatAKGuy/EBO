@@ -21,6 +21,7 @@
   "validthis": true,
   "globals": {
     "angular": false,
+    "Firebase": false,    
     // Angular Mocks
     "inject": false,
     // JASMINE
