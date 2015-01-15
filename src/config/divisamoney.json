@@ -1,0 +1,17 @@
+{
+    "LogoPath": "null",
+    "FaviconPath": "null",
+    "navbar-class": "navbar-inverse",
+    "CSS": {    	    	
+        ".panel.panel-default": {
+            "color": "#333",
+            "background-color" : "#f5f5f5"
+        },
+        ".form-group label": {
+        	"color": "#333"                            
+        },
+        ".form-control": {
+        	"border-color": "#ccc"                            
+        }
+    }
+}

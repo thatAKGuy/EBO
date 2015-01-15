@@ -24,7 +24,7 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body data-ng-controller="AppCtrl">
 
     <div data-ui-view></div>
 
@@ -40,13 +40,17 @@
     <script src="../bower_components/restangular/dist/restangular.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/angular-css-injector/angular-css-injector.js"></script>
     <!-- endbower -->
+    <script src="../bower_components/CSSJSON/cssjson.js"></script>
+    <script src="../bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <!-- inject:js -->
     <script src="app/index.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/configservice/config.service.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/form_trade_finance/form_trade_finance.controller.js"></script>
     <script src="app/chameleon/chameleon.controller.js"></script>
