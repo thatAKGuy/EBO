@@ -11,6 +11,10 @@
 	width: 34px;
 }
 
+.example__logo img{
+	max-height: 34px;	
+}
+
 
 // injector
 @import 'chameleon/chameleon.scss';

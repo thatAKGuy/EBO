@@ -1,22 +1,23 @@
 {
-    "LogoPath": "null",
+    "logo-path": "assets/ebury/images/logo.png",
     "FaviconPath": "null",
+    
     "navbar-class": "navbar-inverse",
     "CSSString": "",
     "CSS": {
         "children": {
-            ".panel.panel-default": {
+            ".panel-default > .panel-heading": {
                 "attributes": {
                     "color": "#333",
                     "background-color": "#f5f5f5"
                 }
             },
-            ".form-group label": {
+            ".panel-default .form-group label": {
                 "attributes": {
                     "color": "#333"
                 }
             },
-            ".form-control": {
+            ".panel-default .form-control": {
                 "attributes": {
                     "border-color": "#ccc"
                 }

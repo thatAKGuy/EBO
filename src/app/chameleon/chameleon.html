@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="example__logo"><img src="assets/images/logo.png" alt=""> </a>
+            <a class="example__logo"><img src="{{$root.config['logo-path']}}" alt=""> </a>
         </div>
         <ul class="nav navbar-nav push-left">
             <li>
@@ -100,9 +100,9 @@
                         <div class="form-group">
                             <label>Header Font Color</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel.panel-default']['attributes']['color']">
+                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel-default > .panel-heading']['attributes']['color']">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel.panel-default']['attributes']['color']}" ng-model="$root.config.CSS.children['.panel.panel-default']['attributes']['color']" colorpicker type="button">
+                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel-default > .panel-heading']['attributes']['color']}" ng-model="$root.config.CSS.children['.panel-default > .panel-heading']['attributes']['color']" colorpicker type="button">
                                     </button>
                                 </div>
                             </div>
@@ -112,9 +112,9 @@
                         <div class="form-group">
                             <label>Header Background Color</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel.panel-default']['attributes']['background-color']">
+                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel-default > .panel-heading']['attributes']['background-color']">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel.panel-default']['attributes']['background-color']}" ng-model="$root.config.CSS.children['.panel.panel-default']['attributes']['background-color']" colorpicker type="button">
+                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel-default > .panel-heading']['attributes']['background-color']}" ng-model="$root.config.CSS.children['.panel-default > .panel-heading']['attributes']['background-color']" colorpicker type="button">
                                     </button>
                                 </div>
                             </div>
@@ -124,9 +124,9 @@
                         <div class="form-group">
                             <label>Form Font Color</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.form-group label']['attributes']['color']">
+                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel-default .form-group label']['attributes']['color']">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.form-group label']['attributes']['color']}" ng-model="$root.config.CSS.children['.form-group label']['attributes']['color']" colorpicker type="button">
+                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel-default .form-group label']['attributes']['color']}" ng-model="$root.config.CSS.children['.panel-default .form-group label']['attributes']['color']" colorpicker type="button">
                                     </button>
                                 </div>
                             </div>
@@ -136,9 +136,9 @@
                         <div class="form-group">
                             <label>Form Input Border</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.form-control']['attributes']['border-color']">
+                                <input type="text" class="form-control" ng-model="$root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.form-control']['attributes']['border-color']}" ng-model="$root.config.CSS.children['.form-control']['attributes']['border-color']" colorpicker type="button">
+                                    <button class="btn btn-default" ng-style="{'background-color': $root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']}" ng-model="$root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']" colorpicker type="button">
                                     </button>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
 
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading" ng-style="{'color': $root.config.CSS.children['.panel.panel-default']['attributes']['color'], 'background-color': $root.config.CSS.children['.panel.panel-default']['attributes']['background-color']} ">
+                <div class="panel-heading" ng-style="{'color': $root.config.CSS.children['.panel-default > .panel-heading']['attributes']['color'], 'background-color': $root.config.CSS.children['.panel-default > .panel-heading']['attributes']['background-color']} ">
                     <h4>1. Your contact details</h4>
                 </div>
                 <div class="panel-body">
@@ -160,20 +160,20 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label ng-style="{'color': $root.config.CSS.children['.form-group label']['attributes']['color']}" for="exampleInputEmail1">Contact name:</label>
-                                    <input ng-style="{'border-color': $root.config.CSS.children['.form-control']['attributes']['border-color']}" type="email" class="form-control" placeholder="Enter email">
+                                    <label ng-style="{'color': $root.config.CSS.children['.panel-default .form-group label']['attributes']['color']}" for="exampleInputEmail1">Contact name:</label>
+                                    <input ng-style="{'border-color': $root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']}" type="email" class="form-control" placeholder="Enter email">
                                 </div>
                                 <div class="form-group">
-                                    <label ng-style="{'color': $root.config.CSS.children['.form-group label']['attributes']['color']}" for="exampleInputPassword1">Position:</label>
-                                    <input ng-style="{'border-color': $root.config.CSS.children['.form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Position">
+                                    <label ng-style="{'color': $root.config.CSS.children['.panel-default .form-group label']['attributes']['color']}" for="exampleInputPassword1">Position:</label>
+                                    <input ng-style="{'border-color': $root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Position">
                                 </div>
                                 <div class="form-group">
-                                    <label ng-style="{'color': $root.config.CSS.children['.form-group label']['attributes']['color']}">Email Address:</label>
-                                    <input ng-style="{'border-color': $root.config.CSS.children['.form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Email Address">
+                                    <label ng-style="{'color': $root.config.CSS.children['.panel-default .form-group label']['attributes']['color']}">Email Address:</label>
+                                    <input ng-style="{'border-color': $root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="form-group">
-                                    <label ng-style="{'color': $root.config.CSS.children['.form-group label']['attributes']['color']}" for="exampleInputPassword1">Telephone:</label>
-                                    <input ng-style="{'border-color': $root.config.CSS.children['.form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Telephone">
+                                    <label ng-style="{'color': $root.config.CSS.children['.panel-default .form-group label']['attributes']['color']}" for="exampleInputPassword1">Telephone:</label>
+                                    <input ng-style="{'border-color': $root.config.CSS.children['.panel-default .form-control']['attributes']['border-color']}" type="password" class="form-control" placeholder="Telephone">
                                 </div>
                             </div>
                         </div>

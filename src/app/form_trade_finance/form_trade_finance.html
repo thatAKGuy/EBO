@@ -1,7 +1,7 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-static-top" ng-class="$root.config['navbar-class']">
     <div class="container">
         <div class="navbar-header">
-            <a class="example__logo"><img src="assets/ebury/images/logo.png" alt=""> </a>
+            <a class="example__logo"><img src="{{$root.config['logo-path']}}" alt=""> </a>
         </div>
         <ul class="nav navbar-nav push-left">
             <li class="active">
@@ -87,10 +87,3 @@
         </div>
     </div>
 </div>
-
-
-<footer>
-    <div class="container">
-        <p>Footer Content</p>
-    </div>
-</footer>

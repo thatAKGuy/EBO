@@ -1,17 +1,26 @@
 {
-    "LogoPath": "null",
-    "FaviconPath": "null",
-    "navbar-class": "navbar-inverse",
-    "CSS": {    	    	
-        ".panel.panel-default": {
-            "color": "#333",
-            "background-color" : "#f5f5f5"
-        },
-        ".form-group label": {
-        	"color": "#333"                            
-        },
-        ".form-control": {
-        	"border-color": "#ccc"                            
+    "logo-path": "assets/divisamoney/images/logo.png",
+    "favicon-path": "null",
+    "navbar-class": "navbar-default",
+    "CSSString": "",
+    "CSS": {
+        "children": {
+            ".panel-default > .panel-heading": {
+                "attributes": {
+                    "color": "#333",
+                    "background-color": "#f5f5f5"
+                }
+            },
+            ".panel-default .form-group label": {
+                "attributes": {
+                    "color": "#333"
+                }
+            },
+            ".panel-default .form-control": {
+                "attributes": {
+                    "border-color": "#ccc"
+                }
+            }
         }
     }
 }
