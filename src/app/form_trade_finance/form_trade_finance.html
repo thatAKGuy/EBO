@@ -1,9 +1,10 @@
-<nav class="navbar navbar-static-top" ng-class="$root.config['navbar-class']">
+<nav class="navbar navbar-static-top" ng-class="($root.config.theme === 'dark') ? 'navbar-inverse' : 'navbar-default'">
+
     <div class="container">
         <div class="navbar-header">
-            <a class="example__logo"><img src="{{$root.config['logo-path']}}" alt=""> </a>
+            <a class="example__logo"><img data-ng-src="{{$root.config.logo}}" alt=""> </a>
         </div>
-        <ul class="nav navbar-nav push-left">
+        <ul class="nav navbar-nav push-left">            
             <li class="active">
                 <a data-ui-sref="form_trade_finance">Trade Finance Form</a>
             </li>
@@ -25,6 +26,7 @@
 
 <div class="jumbotron">
     <div class="container">
+        <p>{{$root.logo}}</p>
         <h2>Fact Finder</h2>
         <h3>Thank you for your interest in Trade Finance.</h3>
         <p>To continue with your application, please fill in the form below.</p>

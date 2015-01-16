@@ -14,7 +14,9 @@
 .example__logo img{
 	max-height: 34px;	
 }
-
+.logo-preview{
+	max-height: 100px;
+}
 
 // injector
 @import 'chameleon/chameleon.scss';

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ebo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'angular.css.injector','colorpicker.module'])
+angular.module('ebo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'angular.css.injector', 'colorpicker.module', 'base64', 'naif.base64'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
@@ -22,31 +22,30 @@ angular.module('ebo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'resta
         $urlRouterProvider.otherwise('/');
 
     })
-    .controller('AppCtrl', function($rootScope, cssInjector, ConfigService) {
 
-        $rootScope.currentTheme = 'ebury';
 
-        //Dropdown Demo POC
-        //Loads config and css file for specific brand
-        $rootScope.$watch('currentTheme', function(brand) {
+.controller('AppCtrl', function($rootScope, cssInjector, ConfigService) {
 
-            if (brand === 'divisamoney') {
+    $rootScope.currentTheme = 'ebury';
 
-                ConfigService.fetchConfig(brand).then(function(response) {
-                    $rootScope.config = response.data;
-                });
-
-                cssInjector.add('/assets/divisamoney/styles/theme.css');
-
-            } else {
-                
-                ConfigService.fetchConfig('ebury').then(function(response) {
-                    $rootScope.config = response.data;
-                });
-
-                cssInjector.removeAll();
-            }
+    //Fetches the current config and theme for a brand
+    var fetchTheme = function(brand) {
+        ConfigService.fetchConfig(brand).then(function(response) {
+            $rootScope.config = response.data;
+            addCSS(response.data.brandCSS);
         });
+    };
 
+    //Appends CSS string to head
+    var addCSS = function(css) {
+        var head = angular.element(document.getElementsByTagName('head')[0]);
+        head.append('<style>' + css + '</style>');
+    };
 
+    //Dropdown Demo POC
+    //Loads config and css file for specific brand    
+    $rootScope.$watch('currentTheme', function(brand) {
+        fetchTheme(brand);        
     });
+
+});

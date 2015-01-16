@@ -13,8 +13,12 @@ angular.module('ebo')
         var configService = {};
 
         configService.fetchConfig = function(brand) {
-            return $http.get('config/'+brand+'.json');                    
+            return $http.get('https://ebury.firebaseio.com/config/'+brand+'.json');                    
         };
+
+        configService.postConfig = function(brand, data) {        	
+            return $http.put('https://ebury.firebaseio.com/config/'+brand+'.json', data);                    
+        };        
 
         return configService;
     
