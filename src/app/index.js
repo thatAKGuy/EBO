@@ -33,19 +33,28 @@ angular.module('ebo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'resta
         ConfigService.fetchConfig(brand).then(function(response) {
             $rootScope.config = response.data;
             addCSS(response.data.brandCSS);
+            addCSS(response.data.customCSS);
         });
     };
 
     //Appends CSS string to head
     var addCSS = function(css) {
+        cleanStyles();
         var head = angular.element(document.getElementsByTagName('head')[0]);
-        head.append('<style>' + css + '</style>');
+        head.append('<style title="themeCSS">' + css + '</style>');
+    };
+
+    var cleanStyles = function() {
+        angular.forEach(document.getElementsByTagName('style'), function(value) {
+            console.log(value);
+            value.innerHTML = '';
+        });
     };
 
     //Dropdown Demo POC
     //Loads config and css file for specific brand    
     $rootScope.$watch('currentTheme', function(brand) {
-        fetchTheme(brand);        
+        fetchTheme(brand);
     });
 
 });
